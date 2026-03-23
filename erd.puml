@@ -1,0 +1,29 @@
+@startuml microfinantare
+left to right direction
+
+rectangle "Utilizator" as Utilizator
+rectangle "Cont" as Cont
+rectangle "Imprumut" as Imprumut
+rectangle "Contributie" as Contributie
+rectangle "Categorie" as Categorie
+rectangle "Imprumut_Categorie" as Imprumut_Categorie
+rectangle "Rambursare" as Rambursare
+rectangle "Plan_Rambursare" as Plan_Rambursare
+rectangle "Status_Imprumut" as Status_Imprumut
+rectangle "Recenztie" as Recenztie
+rectangle "Localitate" as Localitate
+
+
+Utilizator "1(1)" --- "1(1)" Cont
+Utilizator "1(1)" --- "N(1)" Imprumut
+Imprumut "1(1)" --- "N(1)" Contributie
+Utilizator "1(1)" --- "N(1)" Contributie
+Imprumut "1(1)" --- "N(1)" Imprumut_Categorie
+Categorie "1(1)" --- "N(1)" Imprumut_Categorie
+Imprumut "1(1)" --- "N(1)" Rambursare
+Imprumut "1(1)" --- "N(1)" Plan_Rambursare
+Imprumut "1(1)" --- "N(1)" Status_Imprumut
+Utilizator "1(1)" --- "N(1)" Recenztie
+Localitate "1(1)" --- "N(1)" Utilizator
+
+@enduml
